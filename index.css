@@ -1,0 +1,134 @@
+:root {
+  --primary-color: #201E25;
+  --secondary-color: #935E42;
+  --text-color: #efefef;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--primary-color);
+  /* color: var(--text-color); */
+}
+
+body {
+  margin: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input,
+button {
+  outline: none;
+}
+
+.main {
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* grid-template-rows: repeat(2, 1fr); */
+  /* grid-template-columns: repeat(3, minmax(0, 1fr));
+   */
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-gap: 2rem;
+}
+.card {
+  /* width: 300px; */
+  /* height: 200px; */
+  /* aspect-ratio: 3/4; */
+  background-color: var(--secondary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  gap: 1rem;
+  box-shadow: 0;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+
+}
+.card:hover {
+}
+.card-info {
+  display: flex;
+
+  /* flex: 75%; */
+  /* flex: 60%; */
+  /* flex: 1; */
+  width: 50%;
+  flex-direction: column;
+  
+}
+
+.album-artist,
+.album-description,
+.album-title {
+  font-size: clamp(1rem, .5vw, 2rem);
+  color: var(--primary-color);
+}
+
+.album-title {
+  font-weight: 600;
+  margin: 0;
+}
+.album-artist {
+  font-weight: 400;
+  margin: 0.5rem 0;
+}
+.album-description {
+  margin: 0;
+}
+
+.card-image-container {
+  aspect-ratio: 1/1;
+  /* padding-top: 100%; */
+  /* flex: 1; */
+  width: 50%;
+  /* height: 100%; */
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 5px 40px -14px rgba(0, 0, 0, 1);
+}
+.card-image {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content-visibility: auto 
+}
+@media only screen and (min-width: 640px) {
+  .main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .card {
+    flex-direction: column;
+  }
+  .card-info {
+    width: 100%;
+  }
+  .card-image-container {
+    width: 100%;
+    
+  }
+  body {
+    margin-top: 1rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .main {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .card-info {
+
+  }
+}
