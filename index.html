@@ -17,9 +17,9 @@
   </head>
   <body>
     <header class="header">
-      <h1 class="header-title">Photo Gallery</h1>
-      <form class="header-form">
-        <input type="text" placeholder="New Name" />
+      <h1 class="header-title" id="header-title">Photo Gallery</h1>
+      <form class="header-form" id="form" onsubmit="setName()">
+        <input type="text" placeholder="New Name" id="input" />
         <button type="submit">Submit</button>
       </form>
     </header>
@@ -171,3 +171,4 @@
     </main>
   </body>
 </html>
+<script src="index.js"></script>
